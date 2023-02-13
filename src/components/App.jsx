@@ -6,7 +6,7 @@ import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
 import Modal from './Modal/Modal';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+  import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 
 export class App extends Component {
@@ -25,7 +25,7 @@ export class App extends Component {
     this.setState({ isLoading: false });
     const inputForSearch = e.target.elements.inputForSearch;
     if (inputForSearch.value.trim() === '') {
-      return toast.error(' Please enter the text!');
+      return toast.error('🦄 Please enter the text!');
     } else {
       this.setState({ isLoading: true });
     }
@@ -58,11 +58,9 @@ export class App extends Component {
     });
   };
 
-  handleModalClose = () => {
+   closeImage = () => {
     this.setState({
       modalOpen: false,
-      modalImg: '',
-      modalAlt: '',
     });
   };
 
@@ -97,7 +95,7 @@ export class App extends Component {
           <Modal
             src={this.state.modalImg}
             alt={this.state.modalAlt}
-            handleClose={this.handleModalClose}
+            closeImage={this.closeImage}
           />
         ) : null}
         <ToastContainer />
