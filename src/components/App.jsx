@@ -25,7 +25,7 @@ export class App extends Component {
     this.setState({ isLoading: false });
     const inputForSearch = e.target.elements.inputForSearch;
     if (inputForSearch.value.trim() === '') {
-      return toast.error('🦄 Please enter the text!');
+      return toast.error('Please, enter the text!');
     } else {
       this.setState({ isLoading: true });
     }
